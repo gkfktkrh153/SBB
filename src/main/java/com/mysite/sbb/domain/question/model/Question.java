@@ -1,6 +1,7 @@
 package com.mysite.sbb.domain.question.model;
 
 import com.mysite.sbb.domain.answer.model.Answer;
+import com.mysite.sbb.domain.user.model.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +23,9 @@ public class Question {
 
     @Column(columnDefinition = "TEXT")
     private String content;
+
+    @ManyToOne
+    private User author;
 
     private LocalDateTime createDate;
 

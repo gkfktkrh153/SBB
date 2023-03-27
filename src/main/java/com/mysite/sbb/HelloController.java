@@ -19,19 +19,6 @@ public class HelloController {
     @Transactional
     @GetMapping("/")
     public String root(){
-        Question question1 = new Question();
-        question1.setSubject("subject1");
-        question1.setContent("content1");
-        question1.setCreateDate(LocalDateTime.now());
-
-        Question question2 = new Question();
-        question2.setSubject("subject2");
-        question2.setContent("content2");
-        question2.setCreateDate(LocalDateTime.now());
-
-        questionRepository.save(question1);
-        questionRepository.save(question2);
-
         return "redirect:/question/list";
     }
 }

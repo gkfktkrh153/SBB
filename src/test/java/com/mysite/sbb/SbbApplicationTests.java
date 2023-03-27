@@ -11,13 +11,12 @@ class SbbApplicationTests {
     @Autowired
     private QuestionService questionService;
 
-
     @Test
     void testJpa(){
         for (int i = 0; i <= 300; i++){
             String subject = String.format("테스트 데이터[%d]입니다", i);
             String content = "내용없음";
-            this.questionService.create(subject, content);
+            this.questionService.create(subject, content, null);
         }
     }
 
