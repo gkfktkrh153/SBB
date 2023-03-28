@@ -52,6 +52,7 @@
                 </div>
             </div>
             <div class="my-3">
+                <a th:id="|answer_${answer.id}|"></a>
                 <a href="javascript:void(0);" class="recommend btn btn-sm btn-outline-secondary"
                    th:data-uri="@{|/question/vote/${question.id}|}">
                     추천

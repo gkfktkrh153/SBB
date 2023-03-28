@@ -16,13 +16,14 @@ import java.util.Optional;
 @Service
 public class AnswerService {
     private final AnswerRepository answerRepository;
-    public void create(Question question, String content, User author) {
+    public Answer create(Question question, String content, User author) {
         Answer answer = new Answer();
         answer.setContent(content);
         answer.setCreateDate(LocalDateTime.now());
         answer.setQuestion(question);
         answer.setAuthor(author);
-        answerRepository.save(answer);
+        this.answerRepository.save(answer);
+        return answer;
     }
     public Answer getAnswer(Long id){
         Optional<Answer> answer = this.answerRepository.findById(id);
